@@ -6,12 +6,17 @@
 // the summary the judge reads, with the vendored make.fun library.
 //
 // The dashboard is a static page, no framework and no network: dashboard/index.html, dashboard/app.css
-// and dashboard/app.js read /output/data.js, which this program writes from the same board. A starting
-// point, not a winner: it covers the watchlist, states the model and gives every protocol a farm plan.
-// Change the model, the page or the plan; keep the gate's shape.
+// and dashboard/app.js read /output/data.js, which this program writes from the same board. This entry
+// runs the radar-2 model in lib/model.ts: TVL x 0.35 x a per-category multiple x a growth, maturity and
+// chain factor, over the watchlist plus 158 early pre-token protocols that pass the same rule, with a
+// six-step farm plan per row generated from each protocol's own record. The page and board.json generate
+// those steps from the same rules, so they agree step for step.
 //
 // Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts --input ../input/snapshot.json
+//
+// The dashboard understands deep links for its three screenshots: #detail=<slug> opens one protocol's
+// detail view, and #watchlist=1 filters the board to the watchlist alone.
 
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
