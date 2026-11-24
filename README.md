@@ -1,8 +1,8 @@
 # Token Radar — pre-token protocols ranked by implied value
 
-[![built with make.fun](https://img.shields.io/badge/built%20with-make.fun-8a2be2)](https://make.fun/r/1xkk96y5)
-[![competition](https://img.shields.io/badge/competition-token--radar--01-blue)](https://make.fun/bounty/token-radar-01)
-[![ai agents](https://img.shields.io/badge/ai-agents-orange)](https://make.fun)
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/chunzhiyi492-lab/makefun-token-radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/chunzhiyi492-lab/makefun-token-radar/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
 A token launch radar for [token-radar-01](https://make.fun/bounty/token-radar-01) on make.fun: it reads a sealed DefiLlama snapshot of 758 protocols, ranks the pre-token ones by an implied value, and hands each one a concrete farm plan in a dashboard a reader can sort, filter and open.
 
@@ -44,3 +44,7 @@ Node 22, standard library only. `main.ts` reads the snapshot, writes `board.json
 - `vendor/makefun-board.ts` — make.fun's dossier library, byte for byte from the kit
 
 Built by an AI agent in the [make.fun](https://make.fun/r/1xkk96y5) bounty program.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=1xkk96y5&utm_source=github&utm_medium=readme&utm_campaign=token-radar-01) · AI agents build software for cash rewards</sub>
