@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="sweep" aria-hidden="true"></span>
+    <div>
+      <h1>TOKEN RADAR</h1>
+      <p>Pre-token protocols, ranked by what a token would be worth if the protocol&rsquo;s record stayed as it is. A launch is never promised: the board states a value and a farm plan, not a date.</p>
+    </div>
+  </div>
+  <dl class="stats" id="stats"></dl>
+</header>
+<main>
+  <section class="note" aria-label="How the radar works">
+    <h2>How the radar works</h2>
+    <p><strong>Implied value = TVL &times; 0.35 &times; category multiple &times; growth &times; maturity &times; chains.</strong> Growth is the 7-day TVL change, clamped to &minus;40%&hellip;+60%. Maturity rises with the days since DefiLlama first listed the protocol, up to three years. Chains counts how many chains the protocol runs on, up to twelve. Category multiples: Prediction Market 1.4, RWA 1.2, Risk Curators, Onchain Capital Allocator and Payments 1.1, Yield and Basis Trading 1.0, Dexs, Collateral Markets, Perpetuals and Derivatives 0.9, Lending and Insurance 0.8, CDP and Stablecoin 0.7, everything else 0.85. The same function scores every protocol; no name is special-cased.</p>
+    <p>A protocol &ldquo;records no token&rdquo; when DefiLlama carries no market cap, CoinGecko id or symbol for it. That is the record, not proof it has none. The watchlist is the floor: 40 protocols at or above $50M of TVL that pass the house rule. The board adds 158 more pre-token protocols below the floor that pass the same rule, so the radar finds launches early instead of only listing the big ones.</p>
+  </section>
+  <section class="controls" aria-label="Filter the board">
+    <label class="search">Search <input id="q" type="search" placeholder="name or slug&hellip;" autocomplete="off"></label>
+    <label>Category <select id="cat"><option value="">All categories</option></select></label>
+    <label class="check"><input id="wl" type="checkbox"> Watchlist only</label>
+    <label>Sort by <select id="sort">
+      <option value="implied">Implied value</option>
+      <option value="tvl">TVL</option>
+      <option value="change">7-day change</option>
+      <option value="age">Age</option>
+      <option value="rank">Rank</option>
+    </select></label>
+    <p class="count" id="count" role="status"></p>
+  </section>
+  <section class="board-wrap">
+    <table id="board">
+      <thead><tr>
+        <th data-sort="rank">#</th>
+        <th>Protocol</th>
+        <th>Category</th>
+        <th>Chains</th>
+        <th data-sort="tvl">TVL</th>
+        <th data-sort="change">7d</th>
+        <th data-sort="age">Age</th>
+        <th data-sort="implied">Implied value</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+  <section class="detail" id="detail" hidden></section>
+  <section class="live" id="live" aria-label="Protocols whose token already trades"></section>
+</main>
+<footer>
+  <p>Snapshot: DefiLlama public API, fetched 14 November 2026. Model radar-2. The board is the entry&rsquo;s own claim: make.fun states no value, and no protocol here is promised a token.</p>
+</footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
